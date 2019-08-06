@@ -4,9 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 	<packaging>pom</packaging>
 	<modules>
-		<module>spring-cloud-eureka</module>
-        <module>spring-cloud-eureka-two</module>
-		<module>spring-cloud-eureka-cluster</module>
+		<module>spring-cloud-eureka-server/spring-cloud-eureka</module>
+        <module>spring-cloud-eureka-server/spring-cloud-eureka-two</module>
+		<module>spring-cloud-eureka-server/spring-cloud-eureka-cluster</module>
+        <module>eureka-provider-consumer/eureka-provider</module>
+		<module>eureka-provider-consumer/eureka-consumer</module>
+		<module>eureka-provider-consumer/eureka-server</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
