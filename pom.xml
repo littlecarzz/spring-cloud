@@ -6,7 +6,8 @@
 	<modules>
 		<module>spring-cloud-eureka</module>
         <module>spring-cloud-eureka-two</module>
-    </modules>
+		<module>spring-cloud-eureka-cluster</module>
+	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
