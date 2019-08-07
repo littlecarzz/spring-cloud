@@ -10,7 +10,13 @@
         <module>eureka-provider-consumer/eureka-provider</module>
 		<module>eureka-provider-consumer/eureka-consumer</module>
 		<module>eureka-provider-consumer/eureka-server</module>
-	</modules>
+		<module>eureka-provider-consumer/eureka-provider2</module>
+		<module>spring-cloud-hystrix/spring-cloud-consumer-hystrix</module>
+        <module>spring-cloud-hystrix/hystrix-dashboard</module>
+        <module>spring-cloud-hystrix/hystrix-turbine</module>
+        <module>spring-cloud-hystrix/consumer-node1</module>
+        <module>spring-cloud-hystrix/consumer-node2</module>
+    </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
