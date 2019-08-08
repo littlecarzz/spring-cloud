@@ -23,6 +23,7 @@ public class HelloController {
     }
     @RequestMapping("/webhook")
     public String webhook() {
+        System.out.println("webhook");
         return "webhook";
     }
 }
