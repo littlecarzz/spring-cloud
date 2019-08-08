@@ -1,0 +1,10 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: svn-client
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh

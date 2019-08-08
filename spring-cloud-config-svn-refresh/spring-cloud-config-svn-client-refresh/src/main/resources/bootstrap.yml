@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    config:
+      name: neo-config #对应{application}部分
+      uri: http://localhost:8001 #配置中心的具体地址
+      profile: dev
+      label: config-repo
+#      discovery:
+#        service-id: #spring.cloud.config.discovery.service-id：指定配置中心的service-id，便于扩展为高可用配置集群。

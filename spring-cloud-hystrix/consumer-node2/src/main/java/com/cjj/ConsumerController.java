@@ -1,5 +1,6 @@
 package com.cjj;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,8 +18,13 @@ public class ConsumerController {
     HelloRemote HelloRemote;
 
     @RequestMapping("/hello/{name}")
+    @HystrixCommand(fallbackMethod = "fall")
     public String index(@PathVariable("name") String name) {
         return HelloRemote.hello(name);
+    }
+
+    public String fall() {
+        return "false";
     }
 }
 

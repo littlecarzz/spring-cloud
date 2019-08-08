@@ -1,0 +1,20 @@
+server:
+  port: 8001
+spring:
+  profiles:
+    active: subversion
+  application:
+    name: svn-server
+  cloud:
+    config:
+      server:
+        svn:
+          uri: https://PC-20190418ACCY/svn/repo #repo地址
+          username: cjj
+          password: 123456
+          default-label: config-repo #文件夹地址
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

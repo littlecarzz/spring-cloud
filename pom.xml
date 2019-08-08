@@ -16,6 +16,11 @@
         <module>spring-cloud-hystrix/hystrix-turbine</module>
         <module>spring-cloud-hystrix/consumer-node1</module>
         <module>spring-cloud-hystrix/consumer-node2</module>
+        <module>spring-cloud-config-git/spring-cloud-config-server</module>
+        <module>spring-cloud-config-git/spring-cloud-config-client</module>
+		<module>spring-cloud-config-svn-refresh/spring-cloud-config-svn-server</module>
+		<module>spring-cloud-config-svn-refresh/spring-cloud-config-svn-client</module>
+        <module>spring-cloud-config-svn-refresh/spring-cloud-config-svn-client-refresh</module>
     </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
