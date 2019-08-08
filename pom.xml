@@ -21,6 +21,9 @@
 		<module>spring-cloud-config-svn-refresh/spring-cloud-config-svn-server</module>
 		<module>spring-cloud-config-svn-refresh/spring-cloud-config-svn-client</module>
         <module>spring-cloud-config-svn-refresh/spring-cloud-config-svn-client-refresh</module>
+        <module>spring-cloud-config-eureka/spring-cloud-config-eureka</module>
+        <module>spring-cloud-config-eureka/spring-cloud-config-server-eureka</module>
+        <module>spring-cloud-config-eureka/spring-cloud-config-client-eureka</module>
     </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
