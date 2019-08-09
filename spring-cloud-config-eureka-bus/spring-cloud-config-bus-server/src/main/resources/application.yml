@@ -1,0 +1,34 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: git-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/littlecarzz/spring-cloud/    # 配置git仓库的地址
+          search-paths: config-repo                             # git仓库地址下的相对地址，可以配置多个，用,分割。
+          username: littlecarzz                                        # git仓库的账号
+          password: zaoanchs1130                                    # git仓库的密码
+    bus:
+      trace:
+        enabled: true
+        #只需设置spring.cloud.bus.trace.enabled=true，这样在/bus/refresh端点被请求后，访问/trace端点就可
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: admin
+    password: 123456
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/   # 注册中心eurka地址
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: *
