@@ -27,6 +27,10 @@
 		<module>spring-cloud-config-eureka-bus/spring-cloud-config-bus-client</module>
 		<module>spring-cloud-config-eureka-bus/spring-cloud-config-bus-client2</module>
         <module>spring-cloud-config-eureka-bus/spring-cloud-config-bus-client3</module>
+        <module>spring-cloud-netflix-zuul/service-zuul-simple</module>
+        <module>spring-cloud-netflix-zuul/service-zuul-eureka</module>
+        <module>spring-cloud-netflix-zuul/service-zuul-filter</module>
+        <module>spring-cloud-sleuth-zipkin/zipkin-server</module>
     </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>

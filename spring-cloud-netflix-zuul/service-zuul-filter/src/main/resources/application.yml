@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: service-zuul-filter
+server:
+  port: 8888
+#zuul:
+#  routes:
+#    api-a.path: /provider/**
+#    api-a.serviceId: spring-cloud-provider
+# 注释掉路由配置以启动默认路由规则 http://ZUUL_HOST:ZUUL_PORT/微服务在Eureka上的serviceId/**
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/
+#zuul:
+        ##  FormBodyWrapperFilter:
+      ##    pre:
+      ##      disable: true #禁用filter
+zuul:
+  retryable: true #是否开启重试功能
+ribbon:
+  MaxAutoRetries: 2 #对当前服务的重试次数
+  MaxAutoRetriesNextServer: 0 #切换相同Server的次数
+
+
+
