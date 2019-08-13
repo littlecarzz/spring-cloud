@@ -30,8 +30,12 @@
         <module>spring-cloud-netflix-zuul/service-zuul-simple</module>
         <module>spring-cloud-netflix-zuul/service-zuul-eureka</module>
         <module>spring-cloud-netflix-zuul/service-zuul-filter</module>
-        <module>spring-cloud-sleuth-zipkin/zipkin-server</module>
-    </modules>
+		<module>spring-cloud-sleuth-zipkin/server-zipkin</module>
+		<module>spring-cloud-consul/spring-cloud-consul-provider</module>
+		<module>spring-cloud-consul/spring-cloud-consul-provider2</module>
+		<module>spring-cloud-consul/spring-cloud-consul-consumer</module>
+		<module>spring-cloud-gateway/cloud-gateway</module>
+	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>

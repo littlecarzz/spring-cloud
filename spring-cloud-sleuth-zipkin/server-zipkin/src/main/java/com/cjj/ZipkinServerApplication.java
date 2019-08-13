@@ -9,13 +9,13 @@ import zipkin2.server.internal.EnableZipkinServer;
  * 描述：
  *
  * @author littlecar
- * @date 2019/8/12 17:03
+ * @date 2019/8/13 10:52
  */
 @SpringBootApplication
 @EnableEurekaClient
 @EnableZipkinServer
-public class ZipkinApplication {
+public class ZipkinServerApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ZipkinApplication.class, args);
+        SpringApplication.run(ZipkinServerApplication.class, args);
     }
 }

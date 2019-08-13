@@ -1,0 +1,80 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    gateway:
+      routes:
+        #    id：我们自定义的路由 ID，保持唯一
+        #    uri：目标服务地址
+        #    predicates：路由条件，Predicate 接受一个输入参数，返回一个布尔值结果。该接口包含多种默认方法来将 Predicate 组合成其他复杂的逻辑（比如：与，或，非）。
+        #    filters：过滤规则，本示例暂时没用。
+        - id: neo_route
+          uri: http://www.ityouknow.com
+          predicates:
+            - Path=/spring-cloud
+        #时间之后匹配
+#        - id: after_route
+#          uri: http://ityouknow.com
+#          predicates:
+#          - After=2018-01-20T06:06:06+08:00[Asia/Shanghai]
+        #时间之前匹配
+#        - id: before_route
+#          uri: http://ityouknow.com
+#          predicates:
+#            - Before=2018-01-20T06:06:06+08:00[Asia/Shanghai]
+        #时间之间匹配
+#        - id: between_route
+#          uri: http://ityouknow.com
+#          predicates:
+#            - Between=2018-01-20T06:06:06+08:00[Asia/Shanghai], 2019-01-20T06:06:06+08:00[Asia/Shanghai]
+        #cookie匹配
+#         Cookie Route Predicate 可以接收两个参数，一个是 Cookie name ,一个是正则表达式，
+#         路由规则会通过获取对应的 Cookie name 值和正则表达式去匹配，如果匹配上就会执行路由，如果没有匹配上则不执行
+#        - id: cookie_route
+#          uri: http://ityouknow.com
+#          predicates:
+#            - Cookie=ityouknow, kee.e
+        #header匹配
+#        - id: header_route
+#          uri: http://ityouknow.com
+#          predicates:
+#            - Header=X-Request-Id, \d+
+        #host匹配
+#        - id: host_route
+#          uri: http://ityouknow.com
+#          predicates:
+#            - Host=**.ityouknow.com
+        #请求方式匹配
+#        可以通过是 POST、GET、PUT、DELETE 等不同的请求方式来进行路由
+#        - id: method_route
+#          uri: http://ityouknow.com
+#          predicates:
+#            - Method=GET
+        #请求路径匹配
+#        - id: host_route
+#          uri: http://ityouknow.com
+#          predicates:
+#            - Path=/foo/{segment}
+        #请求参数匹配
+#        - id: query_route
+#          uri: http://ityouknow.com
+#          predicates:
+#            - Query=smile #带有smile参数才匹配
+#            - Query=keep, pu. #带有keep参数且参数值以pu开头才匹配
+        #请求ip地址匹配
+#        - id: remoteaddr_route
+#          uri: http://ityouknow.com
+#          predicates:
+#            - RemoteAddr=192.168.1.1/24
+        #组合使用
+        - id: host_foo_path_headers_to_httpbin
+          uri: http://ityouknow.com
+          predicates:
+            - Host=**.foo.org
+            - Path=/headers
+            - Method=GET
+            - Header=X-Request-Id, \d+
+            - Query=foo, ba.
+            - Query=baz
+            - Cookie=chocolate, ch.p
+            - After=2018-01-20T06:06:06+08:00[Asia/Shanghai]
