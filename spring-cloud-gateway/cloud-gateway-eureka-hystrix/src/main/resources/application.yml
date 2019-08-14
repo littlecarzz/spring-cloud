@@ -1,0 +1,29 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: cloud-gateway-eureka-hystrix
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: hystrix_route
+          uri: lb://spring-cloud-provider
+          predicates:
+            - Path=/consumingserviceendpoint
+          filters:
+            - name: Hystrix
+              args:
+                name: fallbackcmd
+                fallbackUri: forward:/incaseoffailureusethis
+                # fallbackUri: forward:/incaseoffailureusethis配置了 fallback 时要会调的路径，当调用 Hystrix 的 fallback 被调用时，请求将转发到/incaseoffailureuset这个 URI。
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+logging:
+  level:
+    org.springframework.cloud.gateway: debug

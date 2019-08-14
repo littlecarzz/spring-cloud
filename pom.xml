@@ -35,6 +35,10 @@
 		<module>spring-cloud-consul/spring-cloud-consul-provider2</module>
 		<module>spring-cloud-consul/spring-cloud-consul-consumer</module>
 		<module>spring-cloud-gateway/cloud-gateway</module>
+		<module>spring-cloud-gateway/cloud-gateway-eureka</module>
+		<module>spring-cloud-gateway/cloud-gateway-eureka-redis</module>
+		<module>spring-cloud-gateway/cloud-gateway-eureka-hystrix</module>
+		<module>spring-cloud-gateway/cloud-gateway-eureka-retry</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>

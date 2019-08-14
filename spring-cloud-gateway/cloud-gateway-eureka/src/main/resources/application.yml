@@ -1,0 +1,39 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: cloud-gateway-eureka
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        #AddRequestParameter GatewayFilter 可以在请求中添加指定参数
+#        - id: add_request_parameter_route
+#          uri: lb://spring-cloud-provider
+#          filters:
+#            - AddRequestParameter=foo, bar
+#          predicates:
+#            - Method=GET
+        #StripPrefix Filter 是一个请求路径截取的功能，我们可以利用这个功能来做特殊业务的转发
+#        - id: nameRoot
+#          uri: lb://spring-cloud-provider
+#          predicates:
+#            - Path=/name/**
+#          filters:
+#            - StripPrefix=2
+        #PrefixPath Filter 的作用和 StripPrefix 正相反，是在 URL 路径前面添加一部分的前缀
+        - id: prefixpath_route
+          uri: lb://spring-cloud-provider
+          filters:
+            - PrefixPath=/hello
+          predicates:
+            - Method=GET
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+logging:
+  level:
+    org.springframework.cloud.gateway: debug

@@ -25,4 +25,12 @@ public class HelloController {
         }
         return "hello " + name + " this is second message";
     }
+    @RequestMapping("/foo")
+    public String foo(String foo) {
+        return "hello "+foo+"!!";
+    }
+    @RequestMapping("/hello/test")
+    public String test() {
+        return "test02";
+    }
 }

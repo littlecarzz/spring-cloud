@@ -16,4 +16,12 @@ public class HelloController {
     public String index(@RequestParam String name) {
         return "hello " + name + " this is first message";
     }
+    @RequestMapping("/foo")
+    public String foo(String foo) {
+        return "hello "+foo+"!";
+    }
+    @RequestMapping("/hello/test")
+    public String test() {
+        return "test01";
+    }
 }
