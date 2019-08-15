@@ -39,7 +39,10 @@
 		<module>spring-cloud-gateway/cloud-gateway-eureka-redis</module>
 		<module>spring-cloud-gateway/cloud-gateway-eureka-hystrix</module>
 		<module>spring-cloud-gateway/cloud-gateway-eureka-retry</module>
-	</modules>
+        <module>spring-boot-admin/spring-boot-admin-server</module>
+		<module>spring-boot-admin/spring-boot-admin-client</module>
+		<module>spring-boot-admin/spring-cloud-eureka-server</module>
+    </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
